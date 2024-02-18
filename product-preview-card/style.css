@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+* {
+  font: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+button:focus,
+button:active,
+input:focus,
+textarea:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+    --clr-primary-cyan: hsl(158, 36%, 37%);
+    --clr-primary-cream: hsl(30, 38%, 92%);
+
+    --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+    --clr-neutral-dark-grayish-blue: hsl(228, 12%, 48%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+    --clr-hover-cyan: hsl(158, 36%, 17%);
+
+    --fs-primary:0.875em;
+    --fs-secondary: 2.5em;
+
+    --ff-primary: "Montserrat", sans-serif;
+    --ff-secondary :"Fraunces", serif;
+
+    --fw-700: 700;
+    --fw-500: 500;
+}
+
+h1{
+    font-size: var(--fs-secondary);
+    color: var(--clr-neutral-dark-blue);
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-700);
+    line-height: 1;
+}
+
+h2{
+    font-size: var(--fs-secondary);
+    color: var(--clr-primary-cyan);
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-700);
+}
+
+.product-category{
+    letter-spacing: .3em;
+}
+
+/*   Styling   */
+body{
+    color: var(--clr-neutral-dark-grayish-blue);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-500);
+    background-color: var(--clr-primary-cream);
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    display: flex;
+    background: var(--clr-neutral-white);
+    max-width: 45em;
+    border-radius: 2vh;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.container-left{
+    min-width: 50%;
+    min-height: 100%;
+}
+
+.container-left img{
+    min-width: 100%;
+    object-fit: cover;
+    min-height: 100%;
+}
+
+.product-container{
+    display: grid;
+    gap: 2em;
+}
+
+.container-right{
+    padding: 2em;
+    display: grid;
+    place-items: center;
+}
+
+.product-info{
+    max-width: 25ch;
+}
+
+.product-price{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.product-price p{
+    text-decoration: line-through;
+}
+
+button{
+    background-color: var(--clr-primary-cyan);
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-neutral-white);
+    gap: 1em;
+    border-radius: 1vh;
+    border: none;
+    padding: 1em 0;
+    min-width: 100%;
+    transition: background-color .3s;
+}
+
+button:hover{
+    background-color: var(--clr-hover-cyan);
+}
+
+.mobile-img{
+  display: none;
+}
+@media (width<=45.3125em){
+  .container-left{
+    display: none;
+  }
+
+  .container-right{
+    padding: 0;
+    max-width: 26em;
+  }
+
+  .product-container{
+    padding: 2em;
+    gap: 1.5em;
+  }
+
+  .mobile-img{
+    display: block;
+  }
+
+  button{
+    padding: 1.5em 0;
+  }
+
+  .product-info{
+    max-width: 31.5ch;
+}
+}
